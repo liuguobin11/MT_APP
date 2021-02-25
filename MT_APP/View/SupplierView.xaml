@@ -1,0 +1,64 @@
+﻿<mah:MetroWindow x:Class="MT_APP.View.SupplierView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:MT_APP"
+        mc:Ignorable="d"
+        Title="关于" Height="340" Width="560" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="#FFF3B53B">
+    <Grid Margin="10">
+        <Border Style="{StaticResource BordeArea}" />
+        <!--<Button VerticalAlignment="Top" HorizontalAlignment="Right"
+                    Style="{StaticResource WindowControlButtonStyle}" Content="&#xe653;"
+                    Command="{Binding CloseWindowCommand}"
+                    CommandParameter="{Binding ElementName=window}">
+        </Button>-->
+        <Grid Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   Content="设备信息"
+                   Style="{DynamicResource DescriptionHeaderStyle}" VerticalAlignment="Center" />
+            <Label Grid.Row="1"
+            	Grid.Column="0"
+            	Grid.ColumnSpan="2"
+            	Content="设备名称：项目名 + 产品名 + 设备功能"
+            	Style="{DynamicResource DescriptionHeaderStyle}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="60,0,0,0"/>
+            <Label Grid.Row="2"
+            	Grid.Column="0"
+            	Grid.ColumnSpan="2"
+            	Content="工作电压：220V(AC)"
+            	Style="{DynamicResource DescriptionHeaderStyle}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="60,0,0,0"/>
+            <Label Grid.Row="3"
+            	Grid.Column="0"
+            	Grid.ColumnSpan="2"
+            	Content="工作气压：4~6(bar)"
+            	Style="{DynamicResource DescriptionHeaderStyle}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="60,0,0,0"/>
+            <Label Grid.Row="4"
+            	Grid.Column="0"
+            	Grid.ColumnSpan="2"
+            	Content="制造日期：XXXX年XX月"
+            	Style="{DynamicResource DescriptionHeaderStyle}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="60,0,0,0"/>
+            <Label Grid.Row="5"
+            	Grid.Column="0"
+            	Grid.ColumnSpan="2"
+            	Content="供应商：XXXXXXXXXXXXXXXXXXXXXXXX"
+            	Style="{DynamicResource DescriptionHeaderStyle}" VerticalAlignment="Top" HorizontalAlignment="Stretch" Margin="60,0,0,0"/>
+        </Grid>
+    </Grid>
+</mah:MetroWindow>

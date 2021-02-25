@@ -1,0 +1,131 @@
+﻿<UserControl x:Class="MT_APP.View.MESView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MT_APP.View"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="800">
+    <!--  #Resources  -->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <Color x:Key="SystemBaseMediumColor">#99FFFFFF</Color>
+
+            <SolidColorBrush x:Key="SplitViewBackgroundBrush" Opacity="1" Color="{StaticResource SystemBaseMediumColor}" />
+
+            <Style TargetType="{x:Type controls:SplitView}">
+                <Setter Property="CompactPaneLength" Value="48" />
+                <Setter Property="DisplayMode" Value="CompactOverlay" />
+                <Setter Property="IsPaneOpen" Value="False" />
+                <Setter Property="OpenPaneLength" Value="320" />
+                <Setter Property="PaneBackground" Value="{StaticResource SplitViewBackgroundBrush}" />
+            </Style>
+
+            <!--  #Templates  -->
+            <ControlTemplate x:Key="ConfigDataTemplate">
+                <Grid d:DataContext="{d:DesignInstance controls:SplitView}" Grid.IsSharedSizeScope="True">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="labels" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Grid.Column="0"
+                               Margin="2"
+                               VerticalAlignment="Center"
+                               Text="IsOpen" />
+                    <CheckBox Grid.Row="0"
+                              Grid.Column="1"
+                              Margin="2"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Center"
+                              IsChecked="{Binding IsPaneOpen}" />
+
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Margin="2"
+                               VerticalAlignment="Center"
+                               Text="DisplayMode" />
+                    <ComboBox Grid.Row="1"
+                              Grid.Column="1"
+                              Width="100"
+                              Margin="2"
+                              VerticalAlignment="Center"
+                              SelectedValue="{Binding DisplayMode}">
+                        <controls:SplitViewDisplayMode>Inline</controls:SplitViewDisplayMode>
+                        <controls:SplitViewDisplayMode>Overlay</controls:SplitViewDisplayMode>
+                        <controls:SplitViewDisplayMode>CompactInline</controls:SplitViewDisplayMode>
+                        <controls:SplitViewDisplayMode>CompactOverlay</controls:SplitViewDisplayMode>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="2"
+                               Grid.Column="0"
+                               Margin="2"
+                               VerticalAlignment="Center"
+                               Text="PanePlacement" />
+                    <ComboBox Grid.Row="2"
+                              Grid.Column="1"
+                              Width="100"
+                              Margin="2"
+                              VerticalAlignment="Center"
+                              SelectedValue="{Binding PanePlacement}">
+                        <controls:SplitViewPanePlacement>Left</controls:SplitViewPanePlacement>
+                        <controls:SplitViewPanePlacement>Right</controls:SplitViewPanePlacement>
+                    </ComboBox>
+
+                    <TextBlock Grid.Row="3"
+                               Grid.Column="0"
+                               Margin="2"
+                               VerticalAlignment="Center"
+                               Text="CancelClose" />
+                    <CheckBox Grid.Row="3"
+                              Grid.Column="1"
+                              Margin="2"
+                              HorizontalAlignment="Left"
+                              VerticalAlignment="Center"
+                              IsChecked="{Binding Tag, Mode=TwoWay}" />
+                </Grid>
+            </ControlTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="350" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320*" />
+        </Grid.RowDefinitions>
+
+        <Expander Grid.Row="0"
+            	Grid.Column="0"
+                  Header="MES" 
+                  IsExpanded="True" Margin="0,0,5,0" mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
+            <StackPanel Margin="15 5 15 5">
+            </StackPanel>
+        </Expander>
+
+        <Expander Grid.Row="0"
+            	Grid.Column="1"
+                  Header="DTP"
+                  IsExpanded="True" Margin="5,0,0,0"  mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
+            
+            <StackPanel Margin="15 5 15 5">
+            </StackPanel>
+        </Expander>
+
+    </Grid>
+</UserControl>

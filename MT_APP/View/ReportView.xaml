@@ -1,0 +1,282 @@
+﻿<UserControl x:Class="MT_APP.View.ReportView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MT_APP.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="840" d:DesignWidth="1600">
+    <FrameworkElement.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+					Source="..\Resources\EstilosTemplate.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </FrameworkElement.Resources>
+    <Grid
+		Name="GridContenido"
+		Style="{StaticResource SeccionGeneralContenidoLat}">
+        <Border
+			Style="{StaticResource BorderContenidoGrid}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition
+						Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition
+						Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid
+					Name="ModuloContenido"
+					Style="{StaticResource ModuloContenido}">
+                    <Grid
+						Height="800px"
+						Column="0"
+						Row="0"
+						Style="{StaticResource GridGrupo}">
+                        <Grid
+							Style="{StaticResource GridGrupo}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+									Width="1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition
+									Height="auto" />
+                                <RowDefinition
+									Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Grid
+								Row="0"
+								Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+										Width="1*" />
+                                    <ColumnDefinition
+										Width="1*" />
+                                    <ColumnDefinition
+										Width="0.5*" />
+                                    <ColumnDefinition
+										Width="1*" />
+                                    <ColumnDefinition
+										Width="0.5*" />
+                                    <ColumnDefinition
+										Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+										Height="auto" />
+                                    <RowDefinition
+										Height="auto" />
+                                </Grid.RowDefinitions>
+                                <DatePicker
+									Name="dateDesde"
+									Grid.Row="0"
+									Grid.Column="0"
+									Style="{StaticResource datePickerStyle}"
+									CalendarStyle="{DynamicResource calendarStyle}" />
+                                <DatePicker
+									Name="dateHasta"
+									Grid.Row="0"
+									Grid.Column="1"
+									Style="{StaticResource datePickerStyle}"
+									CalendarStyle="{DynamicResource calendarStyle}" />
+                                <Label
+									Grid.Row="0"
+									Grid.Column="2"
+									Content="STATION : "
+									Style="{StaticResource EtiquetaChicaCampo}"
+									Margin="0,13,24,-2" />
+                                <ComboBox
+									Name="cmbEstacion"
+									Grid.Row="0"
+									Grid.Column="3"
+									SelectedValuePath="Tag"
+									Style="{StaticResource ComboGeneral}"
+									SelectionChanged="HideResend">
+                                    <ComboBoxItem
+										Content=""
+										Tag="" />
+                                    <ComboBoxItem
+										Content="PCB Loading"
+										Tag="Assembly_PCB_Loading" />
+                                    <ComboBoxItem
+										Content="Camera Check"
+										Tag="Camera_Check" />
+                                    <ComboBoxItem
+										Content="RF Test"
+										Tag="RF_TEST" />
+                                    <ComboBoxItem
+										Content="Leakage Test"
+										Tag="Assembly_Leakage_Test" />
+                                    <ComboBoxItem
+										Content="Screwing Value"
+										Tag="Screwing_Valve" />
+                                    <ComboBoxItem
+										Content="EOL"
+										Tag="EOL" />
+                                    <ComboBoxItem
+										Content="Pre Packing"
+										Tag="Pre_packing" />
+                                </ComboBox>
+                                <Label
+									Grid.Row="0"
+									Grid.Column="4"
+									Content="Unit ID : "
+									Style="{StaticResource EtiquetaChicaCampo}" />
+                                <TextBox
+									Name="TxtDMC"
+									Grid.Row="0"
+									Grid.Column="5"
+									Width="300"
+									Style="{StaticResource CajaTextoDatos}"
+									MaxLength="25" />
+                                <Button
+									Name="btnActualizar"
+									Grid.Row="1"
+									Grid.Column="5"
+									Content="UPDATE"
+									Style="{StaticResource BotonChico}"
+									Click="btnActualizar_Click" />
+                                <Button
+									Name="btnResend"
+									Grid.Row="1"
+									Grid.Column="4"
+									Content="RESEND MES"
+									Style="{StaticResource BotonReducidoAlerta}"
+									Margin="0,0,20,0"
+									Visibility="Hidden"
+									Click="btnResend_Click" />
+                                <TextBlock
+									Name="Mensajes"
+									Grid.Row="1"
+									Grid.Column="0"
+									Grid.ColumnSpan="4"
+									Style="{StaticResource MensajesEtiqueta}" />
+                                <TextBlock
+									Name="MensajesError"
+									Grid.Row="1"
+									Grid.Column="0"
+									Grid.ColumnSpan="4"
+									Style="{StaticResource MensajesErrorEtiqueta}" />
+                            </Grid>
+                            <Grid
+								Name="Malla"
+								Row="1"
+								Style="{StaticResource AreaPLCs}"
+								Height="650"
+								Width="auto"
+								Margin="0,0,0,20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+										Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+										Height="*" />
+                                </Grid.RowDefinitions>
+                                <DataGrid
+									Name="gridProduccion"
+									Style="{StaticResource GridListaChica}"
+									RowHeight="30" HorizontalAlignment="Left" Margin="20,20,-2,600" VerticalAlignment="Stretch" Width="1520">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn
+											Header="IdNum"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="10"
+											Visibility="Hidden"
+											Binding="{Binding IDNUM}" />
+                                        <DataGridTextColumn
+											Header="UnitID"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="200"
+											Binding="{Binding UNITID}" />
+                                        <DataGridTextColumn
+											Header="UnitIDType"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="200"
+											Binding="{Binding UNITIDTYPE}" />
+                                        <DataGridTextColumn
+											Header="Result"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="80"
+											Binding="{Binding RESULT}" />
+                                        <DataGridTextColumn
+											Header="StartDate"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="170"
+											Binding="{Binding STARTDATE}" />
+                                        <DataGridTextColumn
+											Header="EndDate"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="170"
+											Binding="{Binding ENDDATE}" />
+                                        <DataGridTextColumn
+											Header="GroupData"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="200"
+											Binding="{Binding GROUPDATA}" />
+                                        <DataGridTextColumn
+											Header="NameData"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="200"
+											Binding="{Binding NAMEDATA}" />
+                                        <DataGridTextColumn
+											Header="Description"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="300"
+											Binding="{Binding DESCRIPTION}" />
+                                        <DataGridTextColumn
+											Header="Height"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="100"
+											Visibility="Hidden"
+											Binding="{Binding HEIGHT}" />
+                                        <DataGridTextColumn
+											Header="Leak"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="100"
+											Visibility="Hidden"
+											Binding="{Binding LEAK}" />
+                                        <DataGridTextColumn
+											Header="Corner"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="100"
+											Visibility="Hidden"
+											Binding="{Binding CORNER}" />
+                                        <DataGridTextColumn
+											Header="Torque"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="100"
+											Visibility="Hidden"
+											Binding="{Binding TORQUE}" />
+                                        <DataGridTextColumn
+											Header="Depth"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="100"
+											Visibility="Hidden"
+											Binding="{Binding DEPTH}" />
+                                        <DataGridTextColumn
+											Header="File TestName"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="300"
+											Visibility="Hidden"
+											Binding="{Binding FILE_TESTNAME}" />
+                                        <DataGridTextColumn
+											Header="Test Report"
+											HeaderStyle="{StaticResource RowEncabezado}"
+											Width="300"
+											Visibility="Hidden"
+											Binding="{Binding TEST_REPORT}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
