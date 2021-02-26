@@ -7,7 +7,7 @@
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="800">
+             d:DesignHeight="500" d:DesignWidth="900">
     <!--  #Resources  -->
     <UserControl.Resources>
         <ResourceDictionary>
@@ -115,6 +115,31 @@
                   Header="MES" 
                   IsExpanded="True" Margin="0,0,5,0" mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
             <StackPanel Margin="15 5 15 5">
+                <GroupBox  Header="IP设置" Height="200" mah:HeaderedControlHelper.HeaderFontSize="18">
+                    <Grid Margin="0,0,0,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="16*"/>
+                            <ColumnDefinition Width="44*"/>
+                            <ColumnDefinition Width="19*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                            <RowDefinition Height="45*"/>
+                        </Grid.RowDefinitions>
+                        <Label x:Name="lblIP" Content="IP：" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                        <Label x:Name="lblPort" Content="Port：" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                        <Label x:Name="lblTimeout" Content="超时：" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                        <Label x:Name="lblEquipmentName" Content="设备名称：" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
+                        <TextBox x:Name="txtIP"  Text="10.221.101.123" Grid.Column="1" Grid.Row="0" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
+                        <TextBox x:Name="txtPort"  Text="XXXXX" Grid.Column="1" Grid.Row="1" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
+                        <TextBox x:Name="txtTimeout"  Text="XXXXX" Grid.Column="1" Grid.Row="2" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
+                        <TextBox x:Name="txtEquipmentName"  Text="BS_ASSY_01" Grid.Column="1" Grid.Row="3" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox  Header="结果" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
+                <GroupBox  Header="命令" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
             </StackPanel>
         </Expander>
 
@@ -122,8 +147,10 @@
             	Grid.Column="1"
                   Header="DTP"
                   IsExpanded="True" Margin="5,0,0,0"  mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-            
             <StackPanel Margin="15 5 15 5">
+                <GroupBox  Header="路径设置" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
+                <GroupBox  Header="规则定义" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
+                <GroupBox  Header="变量获取" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
             </StackPanel>
         </Expander>
 
