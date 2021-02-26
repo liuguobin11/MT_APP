@@ -7,7 +7,7 @@
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="900">
+             d:DesignHeight="800" d:DesignWidth="1200">
     <!--  #Resources  -->
     <UserControl.Resources>
         <ResourceDictionary>
@@ -113,45 +113,122 @@
         <Expander Grid.Row="0"
             	Grid.Column="0"
                   Header="MES" 
-                  IsExpanded="True" Margin="0,0,5,0" mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-            <StackPanel Margin="15 5 15 5">
-                <GroupBox  Header="IP设置" Height="200" mah:HeaderedControlHelper.HeaderFontSize="18">
-                    <Grid Margin="0,0,0,0" >
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="16*"/>
-                            <ColumnDefinition Width="44*"/>
-                            <ColumnDefinition Width="19*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="45*"/>
-                            <RowDefinition Height="45*"/>
-                            <RowDefinition Height="45*"/>
-                            <RowDefinition Height="45*"/>
-                        </Grid.RowDefinitions>
-                        <Label x:Name="lblIP" Content="IP：" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                        <Label x:Name="lblPort" Content="Port：" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                        <Label x:Name="lblTimeout" Content="超时：" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                        <Label x:Name="lblEquipmentName" Content="设备名称：" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="31" Width="80" VerticalContentAlignment="Center" HorizontalContentAlignment="Right"/>
-                        <TextBox x:Name="txtIP"  Text="10.221.101.123" Grid.Column="1" Grid.Row="0" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
-                        <TextBox x:Name="txtPort"  Text="XXXXX" Grid.Column="1" Grid.Row="1" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
-                        <TextBox x:Name="txtTimeout"  Text="XXXXX" Grid.Column="1" Grid.Row="2" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
-                        <TextBox x:Name="txtEquipmentName"  Text="BS_ASSY_01" Grid.Column="1" Grid.Row="3" Height="23" Margin="5,3,0,2" TextWrapping="Wrap"/>
-                    </Grid>
-                </GroupBox>
-                <GroupBox  Header="结果" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
-                <GroupBox  Header="命令" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
-            </StackPanel>
+                  IsExpanded="True" Margin="0,0,5,0" mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+            <ScrollViewer Margin="10 5 10 5" VerticalScrollBarVisibility="Auto" Height="Auto">
+                <ScrollViewer.Content>
+                    <StackPanel>
+                        <GroupBox  Header="IP设置" Height="Auto" mah:HeaderedControlHelper.HeaderFontSize="18">
+                            <Grid Margin="0,0,0,0" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="230"/>
+                                    <ColumnDefinition Width="200*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                    <RowDefinition Height="40*"/>
+                                    <RowDefinition Height="40*"/>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Label x:Name="lblIP" Content="IP：" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                <Label x:Name="lblPort" Content="Port：" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                <Label x:Name="lblTimeout" Content="超时：" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                <Label x:Name="lblEquipmentName" Content="设备名称：" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                <TextBox x:Name="txtIP"  Text="10.221.101.123" Grid.Column="1" Grid.Row="0"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Margin="0,7" Background="{x:Null}" BorderBrush="Black"/>
+                                <TextBox x:Name="txtPort"  Text="8080" Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Margin="0,7" Background="{x:Null}" BorderBrush="Black"/>
+                                <TextBox x:Name="txtTimeout"  Text="5000" Grid.Column="1" Grid.Row="2"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Margin="0,7" Background="{x:Null}" BorderBrush="Black"/>
+                                <TextBox x:Name="txtEquipmentName"  Text="BS_ASSY_01" Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Margin="0,7" Background="{x:Null}" BorderBrush="Black"/>
+                                <Ellipse x:Name="BrushResource"
+                             Grid.Column="2" Grid.Row="1"
+                             Width="30"
+                             Height="30"
+                             HorizontalAlignment="Left"
+                             Stroke="{DynamicResource MahApps.Brushes.Gray2}" Fill="Green">
+                                </Ellipse>
+
+                                <Button x:Name="btnMESConnect" Content="连接" Grid.Column="2" Grid.Row="2" Margin="0,5" HorizontalAlignment="Left" Width="100" FontSize="12"/>
+                                <Button x:Name="btnMESSave" Content="保存" Grid.Column="2" Grid.Row="3" Margin="0,4,0,5" HorizontalAlignment="Left" Width="100" FontSize="12"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox  Header="结果" Height="Auto" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="18">
+                            <Grid Margin="0,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="80*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40*"/>
+                                    <RowDefinition Height="80"/>
+                                    <RowDefinition Height="40*"/>
+                                </Grid.RowDefinitions>
+                                <Label x:Name="lblMESReminder" Content="帮助：" Grid.Column="0" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                <TextBlock x:Name="txtMESReminder" Margin="5,5,0,0" Grid.Column="1"  FontSize="14" TextWrapping="Wrap" TextAlignment="Center"><Run Text="生产"/><Run Text="产品型号不匹配"/><Run Text="，当前选择型号为A2C9619770721，当前产品为A2C9619770771"/></TextBlock>
+                                <Label x:Name="lblMESResult" Content="Error" Margin="3" Grid.Row="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="24" Background="Red" FontWeight="Bold"/>
+                                <TextBox x:Name="txtMESRevMsg" Margin="3" Grid.Column="1" Grid.Row="1" FontSize="14" Background="{x:Null}" BorderBrush="Black" Text="UNIT_CHECKIN,BS_ASSY_FINAL_20,946017,20210226001300000,ERROR,&lt;Error tokens=&quot;4&quot; ackrequired=&quot;False&quot; text=&quot;Production material part number mismatch! Current PN is A2C9619770721, the unit PN is A2C9619770771&quot; failurecode=&quot;3&quot; /&gt;" TextWrapping="Wrap"/>
+                                <Label x:Name="lblMESSend" Content="发送：" Grid.Column="0" Grid.Row="3" FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                <TextBox x:Name="txtMESSendMsg" Margin="3" Grid.Column="1" Grid.Row="2" FontSize="14" Background="{x:Null}" BorderBrush="Black" Text="UNIT_CHECKIN,BS_ASSY_FINAL_20,946017,20210226001300,&lt;UnitCheckin tokens=&quot;2&quot; uid_in=&quot;0606070122102224083&quot;/&gt;" TextWrapping="Wrap"/>
+                            </Grid>
+
+                        </GroupBox>
+                        <GroupBox  Header="命令" Height="Auto" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="18">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60*"/>
+                                    <RowDefinition Height="80*"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="80*"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label x:Name="lblMESCommand" Content="自定义：" Grid.Column="0"  FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                                    <TextBox x:Name="txtMESCommand" Margin="3" Grid.Column="1"  FontSize="14" Text="UNIT_CHECKIN,BS_ASSY_FINAL_20,946017,20210226001300,&lt;UnitCheckin tokens=&quot;2&quot; uid_in=&quot;0606070122102224083&quot;/&gt;" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="Black"/>
+                                    <Button x:Name="btnMESSend" Content="发送" Grid.Column="3"  FontSize="14" Margin="3"/>
+                                </Grid>
+                                <WrapPanel Grid.Row="1">
+                                    <!--<WrapPanel.Resources>
+                                <Style TargetType="Button">
+                                    <Setter Property="Width" Value="130"/>
+                                    <Setter Property="Height" Value="40"/>
+
+                                </Style>
+                            </WrapPanel.Resources>-->
+                                    <Button x:Name="btnMESPing" Content="Ping" FontSize="14" Margin="2" Height="40" Width="130" IsHitTestVisible="True"/>
+                                    <Button x:Name="btnMESIdentification" Content="Identification" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESReqTimeDate" Content="ReqTimeDate" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESSetupChange" Content="SetupChange" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESUnitCheckin" Content="UnitCheckin" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESUnitCheckout" Content="UnitCheckout" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESCheckMaterial" Content="CheckMaterial" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESReqRunText" Content="ReqRunText" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESReqUintInfo" Content="ReqUintInfo" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                    <Button x:Name="btnMESReqAllIds" Content="ReqAllIds" FontSize="14" Margin="2" Height="40" Width="130"/>
+
+                                </WrapPanel>
+                            </Grid>
+
+                        </GroupBox>
+                    </StackPanel>
+                </ScrollViewer.Content>
+            </ScrollViewer>
         </Expander>
 
         <Expander Grid.Row="0"
             	Grid.Column="1"
                   Header="DTP"
                   IsExpanded="True" Margin="5,0,0,0"  mah:HeaderedControlHelper.HeaderFontSize="24" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-            <StackPanel Margin="15 5 15 5">
-                <GroupBox  Header="路径设置" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
-                <GroupBox  Header="规则定义" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
-                <GroupBox  Header="变量获取" Height="120" mah:HeaderedControlHelper.HeaderFontSize="18"/>
-            </StackPanel>
+            <ScrollViewer Margin="10 5 10 5" VerticalScrollBarVisibility="Auto" Height="Auto">
+                <ScrollViewer.Content>
+                    <StackPanel>
+                        <GroupBox  Header="路径设置" Height="Auto" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="18"/>
+                        <GroupBox  Header="规则定义" Height="Auto" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="18"/>
+                        <GroupBox  Header="变量获取" Height="Auto" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="18"/>
+                    </StackPanel>
+                </ScrollViewer.Content>
+            </ScrollViewer>
         </Expander>
 
     </Grid>

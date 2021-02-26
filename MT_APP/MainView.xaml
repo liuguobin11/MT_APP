@@ -54,7 +54,7 @@
             <!--<Frame Name="frmMain" NavigationUIVisibility="Hidden"></Frame>-->
             <Grid Margin="10">
                 <Border Style="{StaticResource BordeArea}" />
-                <ContentControl Margin="10" Content="{Binding MainContent}"/>
+                <ContentControl Margin="10,10,10,5" Content="{Binding MainContent}"/>
             </Grid>
         </Grid>
     </Grid>

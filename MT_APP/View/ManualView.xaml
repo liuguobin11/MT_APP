@@ -12,9 +12,9 @@
     </UserControl.Resources>
     <Grid>
         <WrapPanel Orientation="Vertical" Margin="5">
-                <GroupBox x:Name="groupBox" Header="扫码器" Height="98" Width="548" mah:HeaderedControlHelper.HeaderFontSize="24">
+            <GroupBox x:Name="groupBox" Header="扫码器" Height="Auto" Width="550" mah:HeaderedControlHelper.HeaderFontSize="24">
                     <Grid Margin="0,0,0,0">
-                        <TextBox x:Name="textBox" Height="43" Margin="0,0,172,0" TextWrapping="Wrap" Text="18207400012102230130" VerticalAlignment="Top" FontSize="24"/>
+                    <TextBox x:Name="textBox" Height="45" Margin="0,0,172,0" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="Black" Text="18207400012102230130" VerticalAlignment="Top" FontSize="24"/>
                         <mah:Badged x:Name="CountingBadge"
             			Width="100"
             			BadgeFontSize="12"
@@ -28,7 +28,7 @@
                         </mah:Badged>
                     </Grid>
                 </GroupBox>
-                <GroupBox x:Name="groupBox_Copy" Header="PLC" Height="229" Width="548" mah:HeaderedControlHelper.HeaderFontSize="24">
+            <GroupBox x:Name="groupBox_Copy" Header="PLC" Height="Auto" Width="550" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
                     <Grid Margin="0,0,0,0" ShowGridLines="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="73*"/>
@@ -69,12 +69,12 @@
 
                     </Grid>
                 </GroupBox>
-                <GroupBox x:Name="groupBox_Copy1" Header="打印机" Height="99" Width="548" mah:HeaderedControlHelper.HeaderFontSize="24">
+            <GroupBox x:Name="groupBox_Copy1" Header="打印机" Height="Auto" Width="550" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
                     <Grid Margin="0,0,0,0" HorizontalAlignment="Right" Width="538">
                         <Button  x:Name="button2" Click="CountingButton_OnClick" Content="打印样签" FontSize="20" HorizontalAlignment="Right" Width="100" Margin="0,5,20,5"  />
                     </Grid>
                 </GroupBox>
-                <GroupBox x:Name="groupBox_Copy2" Header="相机" Height="99" Width="548" mah:HeaderedControlHelper.HeaderFontSize="24">
+            <GroupBox x:Name="groupBox_Copy2" Header="相机" Height="Auto" Width="550" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
                     <Grid Margin="0,0,0,0" HorizontalAlignment="Right" Width="538">
                         <mah:ToggleSwitch
             	            Command="{Binding ToggleSwitchCommand}"
