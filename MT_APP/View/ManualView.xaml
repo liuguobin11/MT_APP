@@ -12,8 +12,8 @@
     </UserControl.Resources>
     <Grid>
         <WrapPanel Orientation="Vertical" Margin="5">
-            <GroupBox x:Name="groupBox" Header="扫码器" Height="Auto" Width="550" mah:HeaderedControlHelper.HeaderFontSize="24">
-                    <Grid Margin="0,0,0,0">
+            <GroupBox x:Name="groupBox" Header="扫码器" Margin="2,2,0,0" Height="Auto" Width="550" mah:HeaderedControlHelper.HeaderFontSize="24">
+                    <Grid>
                     <TextBox x:Name="textBox" Height="45" Margin="0,0,172,0" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="Black" Text="18207400012102230130" VerticalAlignment="Top" FontSize="24"/>
                         <mah:Badged x:Name="CountingBadge"
             			Width="100"
@@ -28,7 +28,7 @@
                         </mah:Badged>
                     </Grid>
                 </GroupBox>
-            <GroupBox x:Name="groupBox_Copy" Header="PLC" Height="Auto" Width="550" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
+            <GroupBox x:Name="groupBox_Copy" Header="PLC" Height="Auto" Width="550" Margin="2,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
                     <Grid Margin="0,0,0,0" ShowGridLines="True">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="73*"/>
@@ -69,21 +69,48 @@
 
                     </Grid>
                 </GroupBox>
-            <GroupBox x:Name="groupBox_Copy1" Header="打印机" Height="Auto" Width="550" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
-                    <Grid Margin="0,0,0,0" HorizontalAlignment="Right" Width="538">
-                        <Button  x:Name="button2" Click="CountingButton_OnClick" Content="打印样签" FontSize="20" HorizontalAlignment="Right" Width="100" Margin="0,5,20,5"  />
+            <GroupBox x:Name="groupBox_Copy1" Header="打印机" Height="Auto" Width="550" Margin="2,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
+                    <Grid>
+                        <Button  x:Name="button2" Content="打印样签" FontSize="20" HorizontalAlignment="Right" Width="100" Margin="0,5,20,5"  />
                     </Grid>
                 </GroupBox>
-            <GroupBox x:Name="groupBox_Copy2" Header="相机" Height="Auto" Width="550" Margin="0,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
-                    <Grid Margin="0,0,0,0" HorizontalAlignment="Right" Width="538">
+            <GroupBox x:Name="groupBox_Copy2" Header="相机" Height="Auto" Width="550" Margin="2,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
+                    <Grid>
                         <mah:ToggleSwitch
             	            Command="{Binding ToggleSwitchCommand}"
             	            IsOn="True"
             	            OffContent="光源已关闭"
-            	            OnContent="光源已打开" Height="31" Width="139" VerticalAlignment="Top" Margin="20,7,0,0" />
+            	            OnContent="光源已打开" Height="30" Width="140" VerticalAlignment="Top" Margin="20,7,0,0" />
                         <Button  x:Name="button3" Content="触发拍照" FontSize="20" Margin="180,5,0,5" HorizontalAlignment="Left" Width="100"  />
                     </Grid>
                 </GroupBox>
-            </WrapPanel>
+            <GroupBox x:Name="groupBox1" Header="电源 6700C" Height="Auto" Width="550" Margin="2,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
+                <Grid>
+                    <mah:ToggleSwitch
+            	            Command="{Binding ToggleSwitchCommand}"
+            	            IsOn="True"
+            	            OffContent="CH1已关闭"
+            	            OnContent="CH1已打开" Height="30" Width="140" VerticalAlignment="Top" Margin="150,0,0,0" />
+                    <mah:ToggleSwitch
+            	            Command="{Binding ToggleSwitchCommand}"
+            	            IsOn="True"
+            	            OffContent="CH2已关闭"
+            	            OnContent="CH2已打开" Height="30" Width="140" VerticalAlignment="Top" Margin="400,0,0,0" />
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="groupBox2" Header="激光打标机" Height="Auto" Width="550" Margin="2,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
+                <Grid>
+                    <Button  x:Name="button5"  Content="激光刻印" FontSize="20" HorizontalAlignment="Right" Width="100" Margin="0,5,20,5"  />
+                </Grid>
+            </GroupBox>
+            <GroupBox x:Name="groupBox3" Header="Unicom" Height="Auto" Width="550" Margin="2,2,0,0" mah:HeaderedControlHelper.HeaderFontSize="24">
+                <Grid>
+                    <TextBox x:Name="txtSN" Height="45" Margin="0,0,172,0" TextWrapping="Wrap" Background="{x:Null}" BorderBrush="Black" Text="18207400012102230130" VerticalAlignment="Top" FontSize="24"/>
+
+                    <Button  x:Name="button6"  Content="通讯读码" FontSize="20" HorizontalAlignment="Right" Width="100" Margin="0,5,20,5"  />
+                </Grid>
+            </GroupBox>
+
+        </WrapPanel>
     </Grid>
 </UserControl>

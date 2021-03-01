@@ -7,21 +7,21 @@
              xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="800">
-    
+
     <Grid>
         <ContentControl DataContext="{Binding ElementName=MetroAnimatedTabControl}"/>
         <mah:MetroAnimatedTabControl x:Name="MetroAnimatedTabControl" Background="{x:Null}" mah:TabControlHelper.Underlined="TabPanel">
             <mah:MetroTabItem Header="型号添加" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="533"><Run Text="1、含有项目添加删除和修改"/><LineBreak/><Run Text="2、含有型号添加删除和修改"/><LineBreak/><Run Text="3、如果型号和相关参数和夹具有链接关系，需要可以选择一个型号link出所有相关的参数信息，更改型号和参数保存即可"/><LineBreak/><Run Text="4、如果该岗位不是第一岗，并且型号和其他没有链接关系，请取消型号添加和选型功能"/><LineBreak/><Run Text="5、型号要可以禁用，禁用后的型号不可以出现在自动界面的选线里，该界面可以显示出来禁用与否"/><LineBreak/><Run Text="6、"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Foreground="Red" Text="*注意：进入该界面需要有密码保护，任何更改需要保存Log到数据库中或Log文件中"/></TextBlock>
+                <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="790"><Run Text="1、含有项目添加删除和修改"/><LineBreak/><Run Text="2、含有型号添加删除和修改"/><LineBreak/><Run Text="3、如果型号和相关参数和夹具有链接关系，需要可以选择一个型号link出所有相关的参数信息，更改型号和参数保存即可"/><LineBreak/><Run Text="4、如果该岗位不是第一岗，并且型号和其他没有链接关系，请取消型号添加和选型功能"/><LineBreak/><Run Text="5、型号要可以禁用，禁用后的型号不可以出现在自动界面的选线里，该界面可以显示出来禁用与否"/><LineBreak/><Run Text="6、"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run Foreground="Red" Text="*注意：进入该界面需要有密码保护，任何更改需要保存Log到数据库中或Log文件中"/></TextBlock>
             </mah:MetroTabItem>
             <mah:MetroTabItem Header="数据库" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="533"><Run Text="1"/><Run Text="、"/><Run Text="数据库"/><Run Text="IP"/><LineBreak/><Run Text=""/></TextBlock>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,-1,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="791"><Run Text="1"/><Run Text="、"/><Run Text="数据库"/><Run Text="IP"/><LineBreak/><Run Text=""/></TextBlock>
             </mah:MetroTabItem>
             <mah:MetroTabItem Header="参数设置" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="533"><Run Text="1、含有扫码器配置"/><LineBreak/><Run Text="2、含有工艺参数设置"/><LineBreak/><Run Text="3、含有与PLC，相机，Unicom，打印机，压机，涂胶机，拧钉机"/><Run Text="等"/><Run Text="的通讯接口设置"/><Run Text="（IP，Port等）"/><LineBreak/><Run Text="4、参数要存在数据库中，或存在配置文件中"/></TextBlock>
+                <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="789"><Run Text="1、含有扫码器配置"/><LineBreak/><Run Text="2、含有工艺参数设置"/><LineBreak/><Run Text="3、含有与PLC，相机，Unicom，打印机，压机，涂胶机，拧钉机"/><Run Text="等"/><Run Text="的通讯接口设置"/><Run Text="（IP，Port等）"/><LineBreak/><Run Text="4、参数要存在数据库中，或存在配置文件中"/></TextBlock>
             </mah:MetroTabItem>
             <mah:MetroTabItem Header="一键换型" mah:HeaderedControlHelper.HeaderFontWeight="Bold">
-                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="533" Text="1、含有一键换型常用配置"/>
+                <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="239" Width="790" Text="1、含有一键换型常用配置"/>
             </mah:MetroTabItem>
         </mah:MetroAnimatedTabControl>
 

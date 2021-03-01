@@ -52,7 +52,7 @@
             <!--<ContentControl Name="AtuoPage"></ContentControl>-->
             <!--<Frame Source="AutoPage.xaml"></Frame>-->
             <!--<Frame Name="frmMain" NavigationUIVisibility="Hidden"></Frame>-->
-            <Grid Margin="10">
+            <Grid Margin="5">
                 <Border Style="{StaticResource BordeArea}" />
                 <ContentControl Margin="10,10,10,5" Content="{Binding MainContent}"/>
             </Grid>

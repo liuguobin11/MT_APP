@@ -71,7 +71,6 @@ namespace MT_APP
             //this.frmMain.Navigate(new Uri(btn.Tag.ToString() + ".xaml", UriKind.Relative));
             model = new MainViewModel(btn.Tag.ToString());
             this.DataContext = model;
-
         }
         #endregion
 

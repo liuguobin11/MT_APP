@@ -134,17 +134,17 @@
                             <Label x:Name="lblPort" Content="Port：" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
                             <Label x:Name="lblTimeout" Content="超时：" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
                             <Label x:Name="lblEquipmentName" Content="设备名称：" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                            <TextBox x:Name="txtIP"  Text="10.221.101.123" Grid.Column="1" Grid.Row="0"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
-                            <TextBox x:Name="txtPort"  Text="8080" Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
+                            <TextBox x:Name="txtIP"  Text="10.221.128.93" Grid.Column="1" Grid.Row="0"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
+                            <TextBox x:Name="txtPort"  Text="40122" Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
                             <TextBox x:Name="txtTimeout"  Text="5000" Grid.Column="1" Grid.Row="2"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
-                            <TextBox x:Name="txtEquipmentName"  Text="BS_ASSY_01" Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
-                            <Ellipse x:Name="BrushResource"
+                            <TextBox x:Name="txtEquipmentName"  Text="BS_VI_ASSY_FINAL_21" Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14"  Background="{x:Null}" BorderBrush="Black"/>
+                            <Ellipse x:Name="EllipseMESStatus"
 								Grid.Column="2" Grid.Row="1"
 								Width="30"
 								Height="30"
 								HorizontalAlignment="Left"
 								Stroke="{DynamicResource MahApps.Brushes.Gray2}" Fill="Green"/>
-                            <Button x:Name="btnMESConnect" Content="连接" Grid.Column="2" Grid.Row="2"  HorizontalAlignment="Left" Width="100" FontSize="12"/>
+                            <Button x:Name="btnMESConnect" Content="连接" Click="btnToolFuc_Click" Grid.Column="2" Grid.Row="2"  HorizontalAlignment="Left" Width="100" FontSize="12"/>
                             <Button x:Name="btnMESSave" Content="保存" Grid.Column="2" Grid.Row="3"  HorizontalAlignment="Left" Width="100" FontSize="12"/>
                         </Grid>
                     </GroupBox>
@@ -194,16 +194,16 @@
 
                                 </Style>
                             </WrapPanel.Resources>-->
-                                <Button x:Name="btnMESPing" Content="Ping" FontSize="14" Margin="2" Height="40" Width="130" IsHitTestVisible="True"/>
-                                <Button x:Name="btnMESIdentification" Content="Identification" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESReqTimeDate" Content="ReqTimeDate" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESSetupChange" Content="SetupChange" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESUnitCheckin" Content="UnitCheckin" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESUnitCheckout" Content="UnitCheckout" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESCheckMaterial" Content="CheckMaterial" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESReqRunText" Content="ReqRunText" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESReqUintInfo" Content="ReqUintInfo" FontSize="14" Margin="2" Height="40" Width="130"/>
-                                <Button x:Name="btnMESReqAllIds" Content="ReqAllIds" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESPing" Content="Ping" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130" IsHitTestVisible="True"/>
+                                <Button x:Name="btnMESIdentification" Content="Identification" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESReqTimeDate" Content="Req Time Date" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESSetupChange" Content="Setup Change" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESUnitCheckin" Content="Unit Checkin" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESUnitCheckout" Content="Unit Checkout" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESCheckMaterial" Content="Check Material" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESReqRunText" Content="Req Run Text" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESReqUintInfo" Content="Req Uint Info" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
+                                <Button x:Name="btnMESReqAllIds" Content="Req All Ids" Click="btnToolFuc_Click" FontSize="14" Margin="2" Height="40" Width="130"/>
 
                             </WrapPanel>
                         </Grid>
@@ -254,16 +254,16 @@
                                 <RowDefinition Height="60*"/>
                                 <RowDefinition Height="60*"/>
                             </Grid.RowDefinitions>
-                            <Label x:Name="lblProcessStep" Content="Process Step：" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                            <TextBox x:Name="txtProcessStep"  Text="EOL" Grid.Column="1" Grid.Row="0"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black"/>
-                            <Label x:Name="lblPartNumber" Content="型号：" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                            <ComboBox x:Name="txtPartNumber" Grid.Column="1" Grid.Row="1"  HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black">
+                            <Label x:Name="lblPartNumber" Content="型号：" Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                            <ComboBox x:Name="txtPartNumber" Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black">
                                 <ComboBoxItem Content="A2C1949941191" HorizontalAlignment="Left" Width="198"/>
                             </ComboBox>
-                            <Label x:Name="lblSachzeichnungsnummer" Content="第一层目录：" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                            <TextBox x:Name="txtSachzeichnungsnummer" Text="A2C194994" Grid.Column="1" Grid.Row="2"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black"/>
-                            <Label x:Name="lblMlfb" Content="第二层目录：" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-                            <TextBox x:Name="txtMlfb"  Text="A2C1949941100" Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black"/>
+                            <Label x:Name="lblSachzeichnungsnummer" Content="第一层目录：" Grid.Column="0" Grid.Row="1" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                            <TextBox x:Name="txtSachzeichnungsnummer" Text="A2C194994" Grid.Column="1" Grid.Row="1"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black"/>
+                            <Label x:Name="lblMlfb" Content="第二层目录：" Grid.Column="0" Grid.Row="2" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                            <TextBox x:Name="txtMlfb"  Text="A2C1949941100" Grid.Column="1" Grid.Row="2"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black"/>
+                            <Label x:Name="lblProcessStep" Content="Process Step：" Grid.Column="0" Grid.Row="3" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+                            <TextBox x:Name="txtProcessStep"  Text="EOL" Grid.Column="1" Grid.Row="3"  TextWrapping="Wrap" HorizontalAlignment="Left" Width="200" FontSize="14" Background="{x:Null}" BorderBrush="Black"/>
                             <Label x:Name="lblReadyToCheck" Content="Ready To Check：" Grid.Column="0" Grid.Row="4" VerticalAlignment="Top" Height="31" VerticalContentAlignment="Center" HorizontalContentAlignment="Right" FontWeight="Bold"/>
                             <CheckBox Grid.Column="1" Grid.Row="4"/>
                             <Ellipse x:Name="DTPStatus"
